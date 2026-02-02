@@ -3,13 +3,14 @@ icon: fas fa-graduation-cap
 order: 3
 ---
 
-<link rel="stylesheet" href="/assets/css/cards.css">
-<link rel="stylesheet" href="/assets/css/links.css">
-<link rel="stylesheet" href="/assets/css/highlighted_projects.css">
-<link rel="stylesheet" href="/assets/css/section-highlight.css">
+<link rel="stylesheet" href="../assets/css/cards.css">
+<link rel="stylesheet" href="../assets/css/links.css">
+<link rel="stylesheet" href="../assets/css/highlighted_projects.css">
+<link rel="stylesheet" href="../assets/css/section-highlight.css">
 
 <section class="outlined-section-wrapper">
   <section class="outlined-section">
+    <h2>My Background</h2>
 
   <div class="projects-container">
     {% for project in site.data.education %}
