@@ -1,0 +1,57 @@
+.highlighted-projects {
+  padding: 2rem;
+  text-align: center;
+  max-width: none;
+  overflow: visible;
+}
+
+.slider-container {
+  position: relative;
+  overflow: visible;
+  width: 100%;
+}
+
+.slider {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  scrollbar-width: none;
+  flex-direction: row;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px; /* increase slightly */
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 20; /* make sure it's above the cards */
+  pointer-events: auto; /* ensure it's clickable */
+}
+
+.slider-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.slider-btn.left {
+  left: 10px;
+}
+
+.slider-btn.right {
+  right: 10px;
+}

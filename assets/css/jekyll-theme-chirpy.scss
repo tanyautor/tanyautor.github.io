@@ -1,0 +1,71 @@
+---
+---
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+
+@use 'neon-colors' as neon;
+
+body {
+  background: neon.$bg-color; /* dark canvas */
+  color: neon.$text-color; /* soft text */
+  font-family: 'Fira Code', monospace;
+}
+
+#panel-wrapper {
+  display: none;
+}
+
+#main-wrapper .row main {
+  width: 100%;
+  max-width: none;
+  padding: 2rem;
+}
+
+#sidebar {
+  background-color: neon.$bg-color;
+  color: neon.$text-color;
+  border-right: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    180deg,
+    neon.$neon-cyan,
+    neon.$neon-purple
+  );
+}
+
+#topbar {
+  background-color: neon.$bg-color;
+  color: neon.$text-color;
+  display: none;
+}
+
+#tail-wrapper {
+  background-color: neon.$bg-color;
+  color: neon.$text-color;
+  width: 100%;
+  margin-left: 0;
+  padding: 2rem;
+}
+
+#tail-wrapper footer {
+  background-color: neon.$bg-color;
+  color: neon.$text-color;
+}
+
+#mode-switch,
+.mode-switch {
+  display: none !important;
+}
+
+.content a:not(.img-link):hover {
+  color: neon.$neon-purple !important;
+  border-bottom: 1px neon.$neon-purple;
+  text-decoration: none;
+}

@@ -1,0 +1,27 @@
+.filter-menu {
+  position: absolute;
+  border: 1px solid var(--dropdown-border);
+  padding: 10px;
+  z-index: 100;
+  min-width: 150px;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: var(--dropdown-box-shadow);
+  background-color: var(--dropdown-bg);
+  color: var(--dropdown-text);
+}
+
+.filter-menu label {
+  color: var(--dropdown-text);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.filter-menu input[type='checkbox'] {
+  accent-color: #6c63ff;
+}
+
+.project-filter-dropdown {
+  position: relative;
+  display: inline-block;
+}

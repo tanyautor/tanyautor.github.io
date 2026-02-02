@@ -1,0 +1,7 @@
+- title: "Real Time Cloud Rendering"
+  image: "assets/img/blogs/cloud_rendering_thumbnail.gif"
+  link: "/posts/cloud-rendering"
+  tags: [Graphics, C++, OpenGL, Custom Tech]
+  highlighted: true
+  highlighted_layout: image-left
+  short_description: "Research project into Real-Time Cloud rendering using ray marching, and voxel optimizations."

@@ -1,0 +1,107 @@
+---
+---
+
+@use 'neon-colors' as neon;
+
+@media (max-width: 768px) {
+  .featured-project {
+    flex-direction: column;
+
+    &.image-right {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .read-more-btn {
+    align-self: center !important;
+  }
+}
+
+.featured-project {
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;
+  padding: 1rem;
+  &.image-right {
+    flex-direction: row-reverse;
+  }
+}
+
+.featured-media {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+}
+
+.featured-content {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  p {
+    opacity: 0.9;
+    line-height: 1.6;
+  }
+}
+
+.project-cta {
+  margin-top: 1rem;
+  align-self: flex-start;
+}
+
+.featured-projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.read-more-btn {
+  margin-top: auto;
+  margin-bottom: 0.5rem;
+  align-self: flex-start;
+
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+
+  font-weight: 500;
+  text-decoration: none;
+  color: neon.$neon-cyan;
+
+  border: 1px solid neon.$neon-cyan;
+  border-bottom: 1px solid neon.$neon-cyan !important;
+  background: transparent;
+
+  transition:
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+
+  &:hover {
+    color: neon.$neon-purple;
+    background: neon.$neon-cyan;
+    box-shadow: 0 0 12px rgba(neon.$neon-cyan, 0.6);
+    transform: translateY(-1px);
+  }
+}
+
+.featured-project.image-left .read-more-btn {
+  align-self: flex-end;
+}
+
+.featured-project.image-right .read-more-btn {
+  align-self: flex-start;
+}

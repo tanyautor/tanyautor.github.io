@@ -1,0 +1,80 @@
+---
+---
+
+@use 'neon-colors' as neon;
+
+.outlined-section {
+  background-color: neon.$bg-color;
+  text-align: center;
+  min-height: 210px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  display: inline-block;
+  width: 100%;
+  padding: 1rem;
+}
+
+.outlined-section-wrapper {
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(135deg, neon.$neon-cyan, neon.$neon-purple);
+  display: flex;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  box-shadow:
+    -3px -3px 12px neon.$neon-cyan,
+    3px 3px 12px neon.$neon-purple;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+main h1 {
+  margin-top: 0rem;
+}
+
+main h2 {
+  margin: 0rem 0 1.25rem;
+}
+
+.section-title {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  position: relative;
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: neon.$neon-cyan;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: -10%;
+    bottom: -0.5rem;
+    width: 120%;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(135deg, neon.$neon-cyan, neon.$neon-purple);
+    box-shadow:
+      0 0 12px rgba(neon.$neon-cyan, 0.5),
+      0 0 12px rgba(neon.$neon-purple, 0.5);
+  }
+}
+
+.section-title-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}

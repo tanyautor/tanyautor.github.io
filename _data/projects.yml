@@ -1,0 +1,8 @@
+- title: "Real Time Fluid Rendering"
+  image: "assets/img/projects/fluid-rendering/fluid_rendering_thumbnail.gif"
+  link: "/projects/fluid-rendering"
+  tags: [Graphics, C++, Unreal]
+  people: 2
+  highlighted: true
+  highlighted_layout: image-left
+  short_description: "Research project into Real-Time Fluid rendering and particle based fluid simulation."
