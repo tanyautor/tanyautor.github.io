@@ -348,5 +348,5 @@ The lighting model implemented here, was meant for approximating surface normals
 
 In addition the Clouds shape is still quite rigid and limited to the Dimensional Profile. A massive improvement would likely be a tool to edit the Clouds Density and Coverage within the Volume independently, or generate them based on 3D Meshes.
 
-![alt](assets/img/blogs/BUas_logo.webp)
+![alt](assets/img/Logo_BUas.png)
 *his was a student project from BUas Games*
