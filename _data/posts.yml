@@ -1,5 +1,5 @@
 - title: "Attempting Volumetric Clouds from Scratch"
-  image: "assets/img/blogs/cloud_rendering_thumbnail.gif"
+  image: "assets/img/blogs/cloud_rendering/cloud_rendering_thumbnail.gif"
   link: "/tanya-helmers/blogs/cloud-rendering"
   tags: [Graphics, C++, OpenGL, Custom Tech]
   highlighted: true
