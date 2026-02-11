@@ -1,6 +1,6 @@
 - title: "Attempting Volumetric Clouds from Scratch"
   image: "assets/img/blogs/cloud_rendering/cloud_rendering_thumbnail.gif"
-  link: "/tanya-helmers/blogs/cloud-rendering"
+  link: "/blogs/cloud-rendering"
   tags: [Graphics, C++, OpenGL, Custom Tech]
   highlighted: true
   highlighted_layout: image-left
@@ -8,7 +8,7 @@
 
 - title: "Graphics in Unreal Engine 5, what I wish I knew"
   image: "assets/img/projects/fluid-rendering/fluid_rendering_thumbnail.gif"
-  link: "/tanya-helmers/blogs/fluid-rendering"
+  link: "/blogs/fluid-rendering"
   tags: [Graphics, C++, Unreal]
   highlighted: true
   highlighted_layout: image-left
