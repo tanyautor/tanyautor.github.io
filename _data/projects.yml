@@ -1,6 +1,6 @@
 - title: "Real Time Fluid Rendering"
   image: "assets/img/projects/fluid-rendering/fluid_rendering_thumbnail.gif"
-  link: "/projects/fluid-rendering"
+  link: "/tanya-helmers/projects/fluid-simulation"
   tags: [Graphics, C++, Unreal]
   people: 2
   highlighted: true
