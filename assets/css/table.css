@@ -7,7 +7,7 @@
 
 .tg td,
 .tg th {
-  border: 1px solid black;
+  border: 1px solid var(--table-border-color, black);
   font-family: Arial, sans-serif;
   font-size: 14px;
   padding: 10px 5px;
@@ -25,4 +25,15 @@
 .tg .tg-0pky {
   text-align: left;
   vertical-align: top;
+}
+
+/* Dark mode keeps the original black border (unchanged). */
+:root,
+html[data-mode='dark'] {
+  --table-border-color: black;
+}
+
+/* Light mode uses a softer charcoal border instead of pure black. */
+html[data-mode='light'] {
+  --table-border-color: #333333;
 }

@@ -1,10 +1,8 @@
 ---
 ---
 
-@use 'tan-palette' as tanp;
-
 .outlined-section {
-  background-color: tanp.$bg-color;
+  background-color: var(--bg-color);
   text-align: center;
   min-height: 210px;
   position: relative;
@@ -18,7 +16,7 @@
 .outlined-section-wrapper {
   border-radius: 16px;
   padding: 2px;
-  background: tanp.$highlight-border;
+  background: var(--highlight-border);
   display: flex;
   width: 100%;
   position: relative;
@@ -27,8 +25,8 @@
   margin-bottom: 2rem;
 
   box-shadow:
-    0px 0px 0px tanp.$highlight-border,
-    0px 3px 5px tanp.$highlight-shadow;
+    0px 0px 0px var(--highlight-border),
+    0px 3px 5px var(--highlight-shadow);
   transition:
     transform 0.3s ease,
     filter 0.3s ease;
@@ -53,7 +51,7 @@ main h2 {
   display: block;
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: tanp.$text-link-color;
+  color: var(--text-link-color);
 
   &::after {
     content: '';
@@ -63,10 +61,10 @@ main h2 {
     width: 120%;
     height: 4px;
     border-radius: 2px;
-    background: tanp.$text-link-color;
+    background: var(--text-link-color);
     box-shadow:
-      0 0 12px rgba(tanp.$highlight-border, 0.5),
-      0 0 12px rgba(tanp.$highlight-shadow, 0.5);
+      0 0 12px rgba(var(--highlight-border-rgb), 0.5),
+      0 0 12px rgba(var(--highlight-shadow-rgb), 0.5);
   }
 }
 

@@ -6,6 +6,7 @@ layout: page
 <link rel="stylesheet" href="assets/css/links.css">
 <link rel="stylesheet" href="assets/css/highlighted_projects.css">
 <link rel="stylesheet" href="assets/css/section-highlight.css">
+<link rel="stylesheet" href="../assets/css/tag-colors.css">
 
 <section class="outlined-section">
     <h1> Hello! </h1>
@@ -41,9 +42,8 @@ layout: page
             <div class="tags">
 
               {% for tag in project.tags %}
-                {% assign tag_data = site.data.tags[tag] %}
-
-                <span class="tag" style="background-color: {{ tag_data.color }}; color: {{ tag_data.text_color }};">
+                {% assign tag_slug = tag | slugify %}
+                <span class="tag" style="background-color: var(--tag-{{ tag | slugify }}-bg); color: var(--tag-{{ tag | slugify }}-text);">
                   {{ tag }}
                 </span>
 
@@ -85,9 +85,8 @@ layout: page
             <div class="tags">
 
               {% for tag in post.tags %}
-                {% assign tag_data = site.data.tags[tag] %}
-
-                <span class="tag" style="background-color: {{ tag_data.color }}; color: {{ tag_data.text_color }};">
+                {% assign tag_slug = tag | slugify %}
+                <span class="tag" style="background-color: var(--tag-{{ tag | slugify }}-bg); color: var(--tag-{{ tag | slugify }}-text);">
                     {{ tag }}
                 </span>
                 

@@ -12,9 +12,49 @@
 
 @use 'tan-palette' as tanp;
 
+/*
+  Theme color tokens.
+  html[data-mode="dark"]  -> current/default look (unchanged values)
+  html[data-mode="light"] -> new light-mode look
+  :root falls back to dark so nothing changes until data-mode="light"
+  is actually set on <html> (e.g. by Chirpy's mode toggle or your own script).
+*/
+:root,
+html[data-mode='dark'] {
+  color-scheme: dark;
+
+  --card-bg: #{tanp.$card-bg};
+  --highlight-border: #{tanp.$highlight-border};
+  --highlight-border-rgb: 160, 88, 0;
+  --highlight-shadow: #{tanp.$highlight-shadow};
+  --highlight-shadow-rgb: 77, 42, 0;
+  --sidebar-color: #{tanp.$sidebar-color};
+  --bg-color: #{tanp.$bg-color};
+  --text-color: #{tanp.$text-color};
+  --text-link-color: #{tanp.$text-link-color};
+  --text-link-color-rgb: 251, 140, 0;
+  --bg-link-color: #{tanp.$bg-link-color};
+}
+
+html[data-mode='light'] {
+  color-scheme: light;
+
+  --card-bg: #{tanp.$card-bg-light};
+  --highlight-border: #{tanp.$highlight-border-light};
+  --highlight-border-rgb: 217, 119, 6;
+  --highlight-shadow: #{tanp.$highlight-shadow-light};
+  --highlight-shadow-rgb: 243, 217, 177;
+  --sidebar-color: #{tanp.$sidebar-color-light};
+  --bg-color: #{tanp.$bg-color-light};
+  --text-color: #{tanp.$text-color-light};
+  --text-link-color: #{tanp.$text-link-color-light};
+  --text-link-color-rgb: 194, 83, 10;
+  --bg-link-color: #{tanp.$bg-link-color-light};
+}
+
 body {
-  background: tanp.$bg-color; /* dark canvas */
-  color: tanp.$text-color; /* soft text */
+  background: var(--bg-color); /* themed canvas */
+  color: var(--text-color); /* themed text */
   font-family: 'Fira Code', monospace;
 }
 
@@ -29,45 +69,40 @@ body {
 }
 
 #sidebar {
-  background-color: tanp.$bg-color;
-  color: tanp.$text-color;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   border-right: 2px solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(
     130deg,
-    tanp.$sidebar-color,
-    tanp.$bg-color
+    var(--sidebar-color),
+    var(--bg-color)
   );
   box-shadow:
-    1px 1px 1em tanp.$sidebar-color;
+    1px 1px 1em var(--sidebar-color);
 }
 
 #topbar {
-  background-color: tanp.$bg-color;
-  color: tanp.$text-color;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   display: none;
 }
 
 #tail-wrapper {
-  background-color: tanp.$bg-color;
-  color: tanp.$text-color;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   width: 100%;
   margin-left: 0;
   padding: 2rem;
 }
 
 #tail-wrapper footer {
-  background-color: tanp.$bg-color;
-  color: tanp.$text-color;
-}
-
-#mode-switch,
-.mode-switch {
-  display: none !important;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .content a:not(.img-link):hover {
-  color: tanp.$bg-link-color !important;
-  border-bottom: 1px tanp.$bg-link-color;
+  color: var(--bg-link-color) !important;
+  border-bottom: 1px var(--bg-link-color);
   text-decoration: none;
 }

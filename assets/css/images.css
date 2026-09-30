@@ -5,15 +5,30 @@ img {
 
 figure {
   text-align: center;
-  border: 1px #cccccc solid;
+  border: 1px solid var(--figure-border-color, #cccccc);
   padding: 4px;
   margin: auto;
 }
 
 figcaption {
-  background-color: black;
-  color: white;
+  background-color: var(--figcaption-bg, black);
+  color: var(--figcaption-text, white);
   font-style: italic;
   padding: 2px;
   text-align: center;
+}
+
+/* Dark mode keeps the original black caption bar (unchanged). */
+:root,
+html[data-mode='dark'] {
+  --figure-border-color: #cccccc;
+  --figcaption-bg: #000000;
+  --figcaption-text: #ffffff;
+}
+
+/* Light mode uses a soft gray bar instead of a stark black one. */
+html[data-mode='light'] {
+  --figure-border-color: #cccccc;
+  --figcaption-bg: #f1f1f1;
+  --figcaption-text: #1c1e21;
 }

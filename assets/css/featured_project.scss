@@ -1,8 +1,6 @@
 ---
 ---
 
-@use 'tan-palette' as tanp;
-
 @media (max-width: 768px) {
   .featured-project {
     flex-direction: column;
@@ -79,10 +77,10 @@
 
   font-weight: 500;
   text-decoration: none;
-  color: tanp.$text-link-color;
+  color: var(--text-link-color);
 
-  border: 1px solid tanp.$text-link-color;
-  border-bottom: 1px solid tanp.$text-link-color !important;
+  border: 1px solid var(--text-link-color);
+  border-bottom: 1px solid var(--text-link-color) !important;
   background: transparent;
 
   transition:
@@ -91,9 +89,9 @@
     transform 0.25s ease;
 
   &:hover {
-    color: tanp.$bg-link-color;
-    background: tanp.$text-link-color;
-    box-shadow: 0 0 12px rgba(tanp.$text-link-color, 0.6);
+    color: var(--bg-link-color);
+    background: var(--text-link-color);
+    box-shadow: 0 0 12px rgba(var(--text-link-color-rgb), 0.6);
     transform: translateY(-1px);
   }
 }

@@ -7,6 +7,7 @@ order: 3
 <link rel="stylesheet" href="../assets/css/links.css">
 <link rel="stylesheet" href="../assets/css/highlighted_projects.css">
 <link rel="stylesheet" href="../assets/css/section-highlight.css">
+<link rel="stylesheet" href="../assets/css/tag-colors.css">
 
 <section class="outlined-section-wrapper">
   <section class="outlined-section">

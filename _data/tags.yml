@@ -1,23 +1,47 @@
 C++:
-  color: "#00599C"
-  text_color: "#fff"
+  dark:
+    color: "#00599C"
+    text_color: "#fff"
+  light:
+    color: "#D6E8F7"
+    text_color: "#063A63"
 
 Graphics:
-  color: "#E67E22"
-  text_color: "#fff"
+  dark:
+    color: "#E67E22"
+    text_color: "#1c1e21"
+  light:
+    color: "#FBE0C8"
+    text_color: "#7A3E0D"
 
 Unreal:
-  color: "#2D9BF0"
-  text_color: "#fff"
+  dark:
+    color: "#2D9BF0"
+    text_color: "#1c1e21"
+  light:
+    color: "#D3EAFB"
+    text_color: "#0B4F82"
 
 Blueprinting:
-  color: "#00C853"
-  text_color: "#fff"
+  dark:
+    color: "#00C853"
+    text_color: "#1c1e21"
+  light:
+    color: "#CDF2DE"
+    text_color: "#06622F"
 
 OpenGL:
-  color: "#D900FF"
-  text_color: "#fff"
+  dark:
+    color: "#9C27B0"
+    text_color: "#fff"
+  light:
+    color: "#F0D9F5"
+    text_color: "#5A0E66"
 
 Custom Tech:
-  color: "#00C853"
-  text_color: "#fff"
+  dark:
+    color: "#546E7A"
+    text_color: "#fff"
+  light:
+    color: "#DCE4E8"
+    text_color: "#2E3E45"

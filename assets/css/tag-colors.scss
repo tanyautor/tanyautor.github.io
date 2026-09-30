@@ -1,0 +1,26 @@
+---
+---
+
+/*
+  Generated from _data/tags.yml (this file must be saved as _data/tags.yml
+  for `site.data.tags` to resolve below).
+
+  For each tag, exposes:
+    --tag-<slug>-bg
+    --tag-<slug>-text
+  switched automatically by html[data-mode="dark"] / html[data-mode="light"],
+  the same mechanism used for the rest of the site's theme colors.
+*/
+
+{% for tag in site.data.tags %}
+{% assign slug = tag[0] | slugify %}
+:root,
+html[data-mode='dark'] {
+  --tag-{{ slug }}-bg: {{ tag[1].dark.color }};
+  --tag-{{ slug }}-text: {{ tag[1].dark.text_color }};
+}
+html[data-mode='light'] {
+  --tag-{{ slug }}-bg: {{ tag[1].light.color }};
+  --tag-{{ slug }}-text: {{ tag[1].light.text_color }};
+}
+{% endfor %}

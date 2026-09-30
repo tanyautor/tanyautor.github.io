@@ -1,8 +1,6 @@
 ---
 ---
 
-@use 'tan-palette' as tanp;
-
 .projects-container {
   display: flex;
   flex-wrap: wrap;
@@ -36,7 +34,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
   position: relative;
-  color: tanp.$text-color;
+  color: var(--text-color);
   background: transparent;
 
   &::before {
@@ -48,7 +46,7 @@
     bottom: 0px;
     border-radius: inherit;
     z-index: 0;
-    background: tanp.$card-bg;
+    background: var(--card-bg);
     filter: blur(6px);
     opacity: 0.8;
   }
