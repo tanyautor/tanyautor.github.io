@@ -90,6 +90,14 @@ body {
   display: none;
 }
 
+/* Search is not used on this site */
+#search,
+#search-trigger,
+#search-cancel,
+#search-result-wrapper {
+  display: none !important;
+}
+
 #tail-wrapper {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -107,4 +115,60 @@ body {
   color: var(--link-hover-color) !important;
   border-bottom: 1px var(--link-hover-color);
   text-decoration: none;
+}
+
+/* Home page intro: left-aligned, with CV button and social icons in a row */
+.outlined-section.intro-section { /* beats .outlined-section { text-align: center } in section-highlight, which loads later */
+  text-align: left;
+  padding: 1.5rem 2rem;
+  /* name, title & buttons on the left; paragraph on the right */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 3rem;
+}
+
+.intro-section .intro-role {
+  color: var(--text-link-color);
+  margin-top: 0;
+}
+
+.intro-section .intro-text {
+  flex: 1 1 22rem;
+  max-width: 65ch; /* comfortable reading line length */
+  margin: 0;
+}
+
+.intro-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.content a.intro-icon {
+  font-size: 1.6rem;
+  color: var(--text-color);
+}
+
+/* Call-to-action button for the CV on the home page */
+.content a.cv-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.6em 1.2em;
+  border: 2px solid var(--highlight-border);
+  border-radius: 6px;
+  background-color: rgba(var(--text-link-color-rgb), 0.12);
+  color: var(--text-link-color);
+  font-weight: bold;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.content a.cv-button:hover {
+  background-color: rgba(var(--text-link-color-rgb), 0.25);
+  box-shadow: 0 4px 12px rgba(var(--highlight-shadow-rgb), 0.6);
+  border-bottom: 2px solid var(--highlight-border);
 }

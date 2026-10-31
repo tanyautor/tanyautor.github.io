@@ -1,3 +1,11 @@
+Gameplay:
+  dark:
+    color: "#C62828"
+    text_color: "#fff"
+  light:
+    color: "#F9D6D5"
+    text_color: "#7F1D1D"
+
 C++:
   dark:
     color: "#00599C"
@@ -8,24 +16,24 @@ C++:
 
 Graphics:
   dark:
-    color: "#E67E22"
-    text_color: "#1c1e21"
+    color: "#B5561A"
+    text_color: "#fff"
   light:
     color: "#FBE0C8"
     text_color: "#7A3E0D"
 
 Unreal:
   dark:
-    color: "#2D9BF0"
-    text_color: "#1c1e21"
+    color: "#1A6FC0"
+    text_color: "#fff"
   light:
     color: "#D3EAFB"
     text_color: "#0B4F82"
 
 Blueprinting:
   dark:
-    color: "#00C853"
-    text_color: "#1c1e21"
+    color: "#1E7B3A"
+    text_color: "#fff"
   light:
     color: "#CDF2DE"
     text_color: "#06622F"

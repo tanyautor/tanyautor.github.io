@@ -11,6 +11,10 @@
   icon: "fas fa-envelope"
   noblank: true # open link in current tab
 
+- type: CV
+  icon: "fas fa-file-lines"
+  url: "/assets/files/Tanya_Helmers_CV.pdf"
+
 # Uncomment and complete the url below to enable more contact options
 #
 # - type: mastodon

@@ -106,3 +106,19 @@
 .container {
   max-width: 100% !important;
 }
+
+/* Center tag pills: the theme's .tag only has a right margin, which skews rows left */
+.project-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 0.75rem 0;
+}
+
+.project-card .tag {
+  margin: 0;
+  font-weight: normal;
+  line-height: normal;
+  text-align: center;
+}

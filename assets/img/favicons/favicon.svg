@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+  <defs>
+    <!-- angular, tech-style TH with chamfered corners, legible at 16px -->
+    <g id="th" transform="translate(22 68) scale(0.959)">
+      <!-- T: chamfered top corners, cut bottom-right -->
+      <polygon points="44,0 176,0 220,44 220,68 148,68 148,336 92,392 72,392 72,68 0,68 0,44"/>
+      <!-- H: cut top-left and bottom-right corners -->
+      <polygon points="320,0 340,0 340,162 412,162 412,0 488,0 488,336 432,392 412,392 412,230 340,230 340,392 264,392 264,56"/>
+    </g>
+  </defs>
+  <use xlink:href="#th" href="#th" fill="#fb8c00"/>
+</svg>

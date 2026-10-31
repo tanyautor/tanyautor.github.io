@@ -3,15 +3,27 @@ layout: page
 ---
 
 
-<section class="outlined-section">
-    <h1> Hello! </h1>
-    <h3> My name is Tanya Helmers. </h3>
-    <pre>
-        This whole site is still a work in progress at the moment. 
-        But feel free to browse for now. 
-        I try to keep this up to date and post the projects I worked on, 
-        as well as some blog posts I wrote about these projects.
-    </pre>
+<section class="outlined-section intro-section">
+    <div class="intro-main">
+        <h1> Hello! I'm Tanya Helmers. </h1>
+        <h3 class="intro-role"> Gameplay &amp; Tools Programmer </h3>
+        <div class="intro-links">
+            <a class="cv-button" href="{{ '/assets/files/Tanya_Helmers_CV.pdf' | relative_url }}" target="_blank" rel="noopener">
+                <i class="fas fa-file-lines"></i> View my CV
+            </a>
+            <a class="intro-icon" href="https://github.com/{{ site.github.username }}" target="_blank" rel="noopener" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a class="intro-icon" href="https://www.linkedin.com/in/{{ site.LinkedIn.username }}" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </div>
+    <p class="intro-text">
+        Fourth-year games programming student at Breda University of Applied Sciences.
+        I build gameplay systems and the tools around them, in custom C++ engines and Unreal Engine 5.
+        Most recently I was lead &amp; tools programmer on <em>Curtain Call</em>, a first-person action adventure.
+    </p>
 </section>
 
 <section class="outlined-section-wrapper">
@@ -38,9 +50,7 @@ layout: page
 
               {% for tag in project.tags %}
                 {% assign tag_slug = tag | slugify %}
-                <span class="tag" style="background-color: var(--tag-{{ tag | slugify }}-bg); color: var(--tag-{{ tag | slugify }}-text);">
-                  {{ tag }}
-                </span>
+                <span class="tag" style="background-color: var(--tag-{{ tag | slugify }}-bg); color: var(--tag-{{ tag | slugify }}-text);">{{ tag }}</span>
 
               {% endfor %}
 
@@ -81,9 +91,7 @@ layout: page
 
               {% for tag in post.tags %}
                 {% assign tag_slug = tag | slugify %}
-                <span class="tag" style="background-color: var(--tag-{{ tag | slugify }}-bg); color: var(--tag-{{ tag | slugify }}-text);">
-                    {{ tag }}
-                </span>
+                <span class="tag" style="background-color: var(--tag-{{ tag | slugify }}-bg); color: var(--tag-{{ tag | slugify }}-text);">{{ tag }}</span>
                 
               {% endfor %}
             </div>   

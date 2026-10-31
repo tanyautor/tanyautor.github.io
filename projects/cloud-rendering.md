@@ -4,11 +4,11 @@ title: Real Time Cloud Rendering
 date: 2025-10-31
 ---
 
-**My Year 2 self-study project at BUas.**
+<img src="../assets/img/projects/cloud_rendering/cloud_rendering_thumbnail.gif"/>
 
 In my second year studying at BUas, I worked for 8 weeks on a self-study project. The assignment we were given gave us complete freedom in our choice of topic, and only limited us in time and complexity. After deliberating for a while on what topic to explore, I chose to try myself at graphics programming with Volumetric Cloud Rendering. 
 
-<fieldset>
+<fieldset markdown="1">
 
 <legend style="font-size: 1.5em;">My Work</legend>
 
@@ -16,7 +16,7 @@ In my second year studying at BUas, I worked for 8 weeks on a self-study project
  - Low-level graphics optimizations
  - Feature 3
 
-<details>
+<details markdown="1">
 
 <summary markdown="span">Read More</summary>
 
@@ -34,14 +34,14 @@ Personally, I had very little experience in graphics programming prior to this p
 
 </fieldset>
 
-<fieldset>
+<fieldset markdown="1">
 
 <legend style="font-size: 1.5em;">Ray Marching</legend>
 
 
 </fieldset>
 
-<fieldset>
+<fieldset markdown="1">
 
 <legend style="font-size: 1.5em;">Optimizations using DDA Traversal</legend>
 

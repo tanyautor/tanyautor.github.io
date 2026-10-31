@@ -1,3 +1,23 @@
+- title: "Kudzu Puzzle Demo"
+  image: "assets/img/projects/kudzu_demo/kudzu_demo_thumbnail.png"
+  link: "/projects/kudzu-demo"
+  tags: [Gameplay, C++, Custom Tech]
+  desc: [Gameplay Programming, Custom Engine, Team Project]
+  people: 7
+  highlighted: true
+  highlighted_layout: image-left
+  short_description: "Student group project at BUas, focused on collaborating on large code bases in a larger team consisting of only programmers."
+
+- title: "Copper Clash"
+  image: "assets/img/projects/copper_clash/copper_clash_thumbnail.png"
+  link: "/projects/copper-clash"
+  tags: [Gameplay, Unreal, Blueprinting]
+  desc: [Camera Controller, Local Multiplayer Controls, Team Project]
+  people: 12
+  highlighted: true
+  highlighted_layout: image-left
+  short_description: "Student group project at BUas, focused on collaboration and research."
+
 - title: "Real Time Fluid Rendering"
   image: "assets/img/projects/fluid_rendering/fluid_rendering_thumbnail.gif"
   link: "/projects/fluid-simulation"
@@ -8,16 +28,6 @@
   highlighted_layout: image-left
   short_description: "Research project into Real-Time Fluid rendering and particle based fluid simulation."
 
-- title: "Kudzu Puzzle Demo"
-  image: "assets/img/projects/kudzu_demo/kudzu_demo_thumbnail.png"
-  link: "/projects/kudzu-demo"
-  tags: [Custom Tech, C++]
-  desc: [Custom Engine, Team Project, Gameplay Programming]
-  people: 7
-  highlighted: true
-  highlighted_layout: image-left
-  short_description: "Student group project at BUas, focused on collaborating on large code bases in a larger team consisting of only programmers."
-
 - title: "Real Time Cloud Rendering"
   image: "assets/img/projects/cloud_rendering/cloud_rendering_thumbnail.gif"
   link: "/projects/cloud-rendering"
@@ -27,13 +37,3 @@
   highlighted: false
   highlighted_layout: image-left
   short_description: "Research project into Real-Time Cloud rendering based on Guerilla Games Nubis system."
-
-- title: "Copper Clash"
-  image: "assets/img/projects/copper_clash/copper_clash_thumbnail.png"
-  link: "/projects/copper-clash"
-  tags: [Blueprinting, Unreal]
-  desc: [Team Project, Camera Research, Unreal Engine 5]
-  people: 12
-  highlighted: false
-  highlighted_layout: image-left
-  short_description: "Student group project at BUas, focused on collaboration and research."

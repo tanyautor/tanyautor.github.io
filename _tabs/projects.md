@@ -17,45 +17,43 @@ order: 1
     My Projects
   </h1>
 
-    <div class="projects-container">
-      {% for project in site.data.projects %}
-        <div class="card-wrapper">
-          <div class="project-card" data-tags="{{ project.tags | join: ',' }}">
-            <img src="{{ project.image }}" alt="{{ project.title }}">
-            <h3 style="display:inline-block;white-space:break-spaces;">{{ project.title }}</h3>
-            <a href="{{ project.link }}" class="card-link"></a>
+  <div class="projects-container">
+    {% for project in site.data.projects %}
+      <div class="card-wrapper">
+        <div class="project-card" data-tags="{{ project.tags | join: ',' }}">
+          <img src="{{ project.image }}" alt="{{ project.title }}">
+          <h3 style="display:inline-block;white-space:break-spaces;">{{ project.title }}</h3>
+          <a href="{{ project.link }}" class="card-link"></a>
 
-            <div class="tags">
+          <div class="tags">
 
-              {% for tag in project.tags %}
-                {% assign tag_slug = tag | slugify %}
+            {% for tag in project.tags %}
+              {% assign tag_slug = tag | slugify %}
 
-                <span class="tag" style="background-color: var(--tag-{{ tag_slug }}-bg); color: var(--tag-{{ tag_slug }}-text);">
-                  {{ tag }}
-                </span>
+              <span class="tag" style="background-color: var(--tag-{{ tag_slug }}-bg); color: var(--tag-{{ tag_slug }}-text);">{{ tag }}</span>
 
-              {% endfor %}
+            {% endfor %}
 
-            </div>   
+          </div>   
 
-            <div class="desc">
-              <ul class="desc" style="list-style-type:disc;">
+          <div class="desc">
+            <ul class="desc" style="list-style-type:disc;">
 
-              {% for desc in project.desc %}
+            {% for desc in project.desc %}
 
-                <li>
-                  <div class="desc" style="float:left;"> {{ desc }} </div> <br>
-                </li>
+              <li>
+                <div class="desc" style="float:left;"> {{ desc }} </div> <br>
+              </li>
 
-              {% endfor %}
-              </ul>
-            </div>
-
+            {% endfor %}
+            </ul>
           </div>
+
         </div>
+      </div>
 
-      {% endfor %}
+    {% endfor %}
 
-    </div>
+  </div>
   </section>
 </section>
