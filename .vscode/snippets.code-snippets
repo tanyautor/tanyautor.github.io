@@ -1,0 +1,62 @@
+{
+
+	"DropDown": {
+		"prefix": "!dropdown",
+		"body": [
+			"<details>",
+			"",
+			"<summary markdown=\"span\">${1: Title}</summary>",
+			"",
+			"${2:Content goes here...}",
+			"",
+			"</details>"
+		],
+		"description": "Insert dropdown with title"
+	},
+	"FielSet": {
+		"prefix": "!fieldset",
+		"body": [
+			"<fieldset>",
+			"",
+			"<legend style=\"font-size: 1.5em;\">${1: Title}</legend>",
+			"",
+			"${2:Content goes here...}",
+			"",
+			"</fieldset>"
+		],
+		"description": "Insert fieldset with legend"
+	},
+	"Image": {
+		"prefix": "!image",
+		"body": [
+			"<img src=\"../assets/media/${1:ImageName}\" width=\"30%\" />"
+		],
+		"description": "Insert image"
+	},
+	"Video": {
+		"prefix": "!video",
+		"body": [
+			"<video width=\"100%\" height=\"auto\" controls>",
+			"  <source src=\"../assets/media/${1:Name}\" type=\"video/mp4\">",
+			"</video>",
+			"",
+			"![${2:Title}](../assets/media/${1:Name})"
+		],
+		"description": "Insert video tag"
+	},
+	"YouTube": {
+		"prefix": "!youtube",
+		"body": [
+			"<iframe width=\"100%\" style=\"aspect-ratio: 16 / 9;\" src=\"https://www.youtube.com/embed/${1:VideoId}\" title=\"${2:Title}\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+		],
+		"description": "Insert embedded YouTube video"
+	},
+	"Caption":{
+		"prefix": "!caption",
+		"body": [
+			"<figcaption style=\"font-size: 0.8em;\"> ${1:Name}",
+			"</figcaption>"
+		],
+		"description": "Insert an image caption"
+	}
+}

@@ -1,0 +1,61 @@
+details {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--highlight-border);
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 10px;
+}
+
+details[open] {
+  padding-bottom: 8px;
+}
+
+details:hover {
+  box-shadow: 0 4px 12px rgba(var(--highlight-shadow-rgb), 0.6);
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  font-size: 18px;
+  padding: 0px 2%;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+summary:hover {
+  background-color: rgba(var(--highlight-border-rgb), 0.2);
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Chevron marker in the accent color, rotates down when open */
+summary::before {
+  content: '';
+  flex-shrink: 0;
+  width: 0.4em;
+  height: 0.4em;
+  border-right: 3px solid var(--highlight-border);
+  border-bottom: 3px solid var(--highlight-border);
+  transform: rotate(-45deg);
+  transition: transform 0.2s ease;
+}
+
+details[open]>summary::before {
+  transform: rotate(45deg);
+}
+
+details[open]>summary {
+  margin-bottom: 6px;
+}
+
+.main-content p {
+    margin-bottom: 0em;
+}

@@ -34,6 +34,7 @@ html[data-mode='dark'] {
   --text-link-color: #{tanp.$text-link-color};
   --text-link-color-rgb: 251, 140, 0;
   --bg-link-color: #{tanp.$bg-link-color};
+  --link-hover-color: #{tanp.$link-hover-color};
 }
 
 html[data-mode='light'] {
@@ -50,6 +51,7 @@ html[data-mode='light'] {
   --text-link-color: #{tanp.$text-link-color-light};
   --text-link-color-rgb: 194, 83, 10;
   --bg-link-color: #{tanp.$bg-link-color-light};
+  --link-hover-color: #{tanp.$link-hover-color-light};
 }
 
 body {
@@ -102,7 +104,7 @@ body {
 }
 
 .content a:not(.img-link):hover {
-  color: var(--bg-link-color) !important;
-  border-bottom: 1px var(--bg-link-color);
+  color: var(--link-hover-color) !important;
+  border-bottom: 1px var(--link-hover-color);
   text-decoration: none;
 }

@@ -5,11 +5,6 @@ order: 1
 ---
 
 
-<link rel="stylesheet" href="../assets/css/cards.css">
-<link rel="stylesheet" href="../assets/css/links.css">
-<link rel="stylesheet" href="../assets/css/highlighted_projects.css">
-<link rel="stylesheet" href="../assets/css/section-highlight.css">
-<link rel="stylesheet" href="../assets/css/tag-colors.css">
 
 <section class="outlined-section">
   These are mostly research topics I wrote blog posts about. Some of these were written for my time as a student at Breda University of applied sciences (BUas).
