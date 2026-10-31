@@ -29,7 +29,7 @@
 	"Image": {
 		"prefix": "!image",
 		"body": [
-			"<img src=\"../assets/media/${1:ImageName}\" width=\"30%\" />"
+			"<img src=\"/assets/media/${1:ImageName}\" alt=\"${2:Description}\" width=\"30%\" />"
 		],
 		"description": "Insert image"
 	},
@@ -37,10 +37,10 @@
 		"prefix": "!video",
 		"body": [
 			"<video width=\"100%\" height=\"auto\" controls>",
-			"  <source src=\"../assets/media/${1:Name}\" type=\"video/mp4\">",
+			"  <source src=\"/assets/media/${1:Name}\" type=\"video/mp4\">",
 			"</video>",
 			"",
-			"![${2:Title}](../assets/media/${1:Name})"
+			"![${2:Title}](/assets/media/${1:Name})"
 		],
 		"description": "Insert video tag"
 	},
