@@ -30,7 +30,7 @@ order: 2
               {% for tag in post.tags %}
                 {% assign tag_slug = tag | slugify %}
 
-                <span class="tag" style="background-color: var(--tag-{{ tag_slug }}-bg); color: var(--tag-{{ tag_slug }}-text);">{{ tag }}</span>
+                <span class="tag desc-tag">{{ tag }}</span>
                 
               {% endfor %}
             </div>   

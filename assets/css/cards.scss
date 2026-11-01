@@ -107,18 +107,26 @@
   max-width: 100% !important;
 }
 
-/* Center tag pills: the theme's .tag only has a right margin, which skews rows left */
+/* Card pills: stacked one per line, left-aligned, like a bullet list */
 .project-card .tags {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.6rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
   margin: 0.75rem 0;
+  padding: 0 1.25rem 1rem; /* inset from the card edges, matching the image/title padding */
 }
 
 .project-card .tag {
   margin: 0;
   font-weight: normal;
   line-height: normal;
-  text-align: center;
+  text-align: left;
+}
+
+/* Project highlights shown as uniform pills (replaces the coloured tech tags) */
+.project-card .desc-tag {
+  background-color: rgba(var(--text-link-color-rgb), 0.12);
+  color: var(--text-color);
+  border: 1px solid var(--highlight-border) !important; /* theme .tag border is !important */
 }

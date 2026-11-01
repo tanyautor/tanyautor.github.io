@@ -26,27 +26,9 @@ order: 1
           <a href="{{ project.link }}" class="card-link"></a>
 
           <div class="tags">
-
-            {% for tag in project.tags %}
-              {% assign tag_slug = tag | slugify %}
-
-              <span class="tag" style="background-color: var(--tag-{{ tag_slug }}-bg); color: var(--tag-{{ tag_slug }}-text);">{{ tag }}</span>
-
-            {% endfor %}
-
-          </div>   
-
-          <div class="desc">
-            <ul class="desc" style="list-style-type:disc;">
-
             {% for desc in project.desc %}
-
-              <li>
-                <div class="desc" style="float:left;"> {{ desc }} </div> <br>
-              </li>
-
+              <span class="tag desc-tag">{{ desc }}</span>
             {% endfor %}
-            </ul>
           </div>
 
         </div>
