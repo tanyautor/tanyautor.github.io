@@ -1,20 +1,44 @@
+- title: "Curtain Call"
+  image: "assets/img/projects/curtain_call/curtain_call_thumbnail.jpg"
+  link: "/projects/curtain-call"
+  tags: [Gameplay, C++, Unreal]
+  desc: [Stasis Ability Plugin, Combat & Inventory, Lead Programmer]
+  release: { platform: Steam, url: "https://store.steampowered.com/app/4515420/Curtain_Call/" }
+  people: 20
+  highlighted: true
+  highlighted_layout: image-left
+  short_description: "Theatre-themed first-person action adventure with a time-stasis mechanic, released on Steam."
+
 - title: "Kudzu Puzzle Demo"
   image: "assets/img/projects/kudzu_demo/kudzu_demo_thumbnail.png"
   link: "/projects/kudzu-demo"
   tags: [Gameplay, C++, Custom Tech]
-  desc: [Gameplay Programming, Custom Engine, Team Project]
+  desc: [Gameplay Programming, Custom Engine, Input & Physics Tools]
+  release: { platform: itch.io, url: "https://tanyautor.itch.io/kudzu-puzzle-demo" }
   people: 7
   highlighted: true
   highlighted_layout: image-left
   short_description: "Student group project at BUas, focused on collaborating on large code bases in a larger team consisting of only programmers."
 
+- title: "Growth Plan"
+  image: "assets/img/projects/growth_plan/growth_plan_thumbnail.jpg"
+  link: "/projects/growth-plan"
+  tags: [Gameplay, Unreal, Blueprinting]
+  desc: [Player & Camera Controller, Guard AI, Lead Programmer]
+  release: { platform: itch.io, url: "https://buas.itch.io/growth-plan" }
+  people: 5
+  highlighted: true
+  highlighted_layout: image-left
+  short_description: "Stealth puzzler about getting better at your job, made in 8 weeks and published on itch.io."
+
 - title: "Copper Clash"
   image: "assets/img/projects/copper_clash/copper_clash_thumbnail.png"
   link: "/projects/copper-clash"
   tags: [Gameplay, Unreal, Blueprinting]
-  desc: [Camera Controller, Local Multiplayer Controls, Team Project]
-  people: 12
-  highlighted: true
+  desc: [Camera Controller, Local Multiplayer Controls]
+  release: { platform: itch.io, url: "https://buas.itch.io/team-pepper" }
+  people: 13
+  highlighted: false
   highlighted_layout: image-left
   short_description: "Student group project at BUas, focused on collaboration and research."
 
@@ -24,7 +48,7 @@
   tags: [Graphics, C++, Unreal]
   desc: [Compute Shaders, Low-Level GPU Optimization, Research Project]
   people: 2
-  highlighted: true
+  highlighted: false
   highlighted_layout: image-left
   short_description: "Research project into Real-Time Fluid rendering and particle based fluid simulation."
 

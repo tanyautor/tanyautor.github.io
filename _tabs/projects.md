@@ -5,11 +5,6 @@ order: 1
 ---
 
 
-
-<section class="outlined-section">
-  These are mostly research topics I wrote blog posts about. Some of these were written for my time as a student at Breda University of applied sciences (BUas).
-</section>
-
 <section class="outlined-section-wrapper">
   <section class="outlined-section">
 
@@ -22,11 +17,13 @@ order: 1
       <div class="card-wrapper">
         <div class="project-card" data-tags="{{ project.tags | join: ',' }}">
           <img src="{{ project.image }}" alt="{{ project.title }}">
+          {% include team-badge.html people=project.people %}
+            {% include release-badge.html release=project.release %}
           <h3 style="display:inline-block;white-space:break-spaces;">{{ project.title }}</h3>
           <a href="{{ project.link }}" class="card-link"></a>
 
           <div class="tags">
-            {% for desc in project.desc %}
+            {% for desc in project.desc limit: 3 %}
               <span class="tag desc-tag">{{ desc }}</span>
             {% endfor %}
           </div>

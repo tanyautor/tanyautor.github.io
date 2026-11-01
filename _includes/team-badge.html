@@ -1,0 +1,8 @@
+{% comment %} Solo / team badge in the corner of a project card. Usage: {% include team-badge.html people=project.people %} {% endcomment %}
+{% if include.people %}
+  {% if include.people == 1 %}
+    <span class="team-badge"><i class="fas fa-user"></i> Solo</span>
+  {% else %}
+    <span class="team-badge"><i class="fas fa-users"></i> Team</span>
+  {% endif %}
+{% endif %}

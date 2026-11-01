@@ -43,11 +43,13 @@ layout: page
         <div class="card-wrapper">
           <div class="project-card" data-tags="{{ project.tags | join: ',' }}">
             <img src="{{ project.image }}" alt="{{ project.title }}">
+            {% include team-badge.html people=project.people %}
+            {% include release-badge.html release=project.release %}
             <h3 style="display:inline-block;white-space:break-spaces;">{{ project.title }}</h3>
             <a href="{{ project.link }}" class="card-link"></a>
 
             <div class="tags">
-              {% for desc in project.desc %}
+              {% for desc in project.desc limit: 3 %}
                 <span class="tag desc-tag">{{ desc }}</span>
               {% endfor %}
             </div>
@@ -58,12 +60,24 @@ layout: page
       {% endfor %}
 
     </div>
-    
-    <h2 class="dynamic-title"> Posts </h2>
+
+    {% assign highlighted_projects = site.data.projects | where: "highlighted", true %}
+    {% if site.data.projects.size > highlighted_projects.size %}
+      <div class="view-more-row">
+        <a class="view-more" href="{{ '/projects/' | relative_url }}">View all projects <i class="fas fa-arrow-right"></i></a>
+      </div>
+    {% endif %}
+  </section>
+</section>
+
+<section class="outlined-section-wrapper">
+  <section class="outlined-section">
+
+    <h1 class="dynamic-title"> Posts </h1>
     <div class="projects-container">
 
-      {% for post in site.data.posts %}
-      {% if post.highlighted %}
+      {% assign home_posts_limit = 3 %}
+      {% for post in site.data.posts limit: home_posts_limit %}
         <div class="card-wrapper">
           <div class="project-card" data-tags="{{ post.tags | join: ',' }}">
             <img src="{{ post.image }}" alt="{{ post.title }}">
@@ -72,7 +86,7 @@ layout: page
 
             <div class="tags">
 
-              {% for tag in post.tags %}
+              {% for tag in post.tags limit: 3 %}
                 {% assign tag_slug = tag | slugify %}
                 <span class="tag desc-tag">{{ tag }}</span>
                 
@@ -80,10 +94,14 @@ layout: page
             </div>   
           </div>
         </div>
-
-        {% endif %}
       {% endfor %}
 
     </div>
+
+    {% if site.data.posts.size > home_posts_limit %}
+      <div class="view-more-row">
+        <a class="view-more" href="{{ '/blogs/' | relative_url }}">View all posts <i class="fas fa-arrow-right"></i></a>
+      </div>
+    {% endif %}
   </section>
 </section>

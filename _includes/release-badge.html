@@ -1,0 +1,8 @@
+{% comment %} "Released on" link in the corner of a project card. Usage: {% include release-badge.html release=project.release %}
+   release: { platform: Steam | itch.io, url: https://... } {% endcomment %}
+{% if include.release %}
+  {% if include.release.platform == "Steam" %}{% assign release_icon = "fab fa-steam" %}{% else %}{% assign release_icon = "fab fa-itch-io" %}{% endif %}
+  <a class="release-badge" href="{{ include.release.url }}" target="_blank" rel="noopener" aria-label="View on {{ include.release.platform }}">
+    <i class="{{ release_icon }}"></i> Released on {{ include.release.platform }}
+  </a>
+{% endif %}

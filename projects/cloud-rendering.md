@@ -14,7 +14,7 @@ In my second year studying at BUas, I worked for 8 weeks on a self-study project
 
  - Custom Ray Marching
  - Low-level graphics optimizations
- - Feature 3
+ - Procedural cloud shapes from Perlin and Worley noise
 
 <details markdown="1">
 
@@ -38,12 +38,31 @@ Personally, I had very little experience in graphics programming prior to this p
 
 <legend style="font-size: 1.5em;">Ray Marching</legend>
 
+<img src="/assets/img/projects/cloud_rendering/raymarched_sdf.jpg" alt="First ray marched SDF in the engine"/>
+
+*Placeholder.* I started by ray marching simple signed distance fields in a compute shader to get the pipeline working, then moved to marching through a voxel grid of cloud density, taking light samples towards the sun at each step.
+
+</fieldset>
+
+<fieldset markdown="1">
+
+<legend style="font-size: 1.5em;">Cloud Shapes</legend>
+
+<img src="/assets/img/projects/cloud_rendering/cloud_types.jpg" alt="Cloud shapes for different cloud type values"/>
+
+*Placeholder.* The cloud density is built from layered Perlin and Worley noise and baked into the voxel grid. A single cloud type parameter blends between tall, puffy clouds and flat, thin ones.
+
+<!-- TODO: final output GIF (D:\BUas\Year2\BlockB\2425-Y2B-PR-230704\evidence\assets\media\proj_output\WK7_mile\pink_cloud_output_lowres.gif) -->
 
 </fieldset>
 
 <fieldset markdown="1">
 
 <legend style="font-size: 1.5em;">Optimizations using DDA Traversal</legend>
+
+<img src="/assets/img/projects/cloud_rendering/warp_coherency_profile.jpg" alt="GPU profile showing low warp coherence"/>
+
+*Placeholder.* DDA traversal steps each ray exactly from voxel to voxel instead of at a fixed distance, so empty space is skipped. Profiling the GPU showed low warp coherence and L2 hit rates, which I improved by reducing branching and rendering at quarter resolution.
 
 
 </fieldset>

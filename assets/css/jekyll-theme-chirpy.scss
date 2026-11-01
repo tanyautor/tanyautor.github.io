@@ -153,8 +153,9 @@ body {
   color: var(--text-color);
 }
 
-/* Call-to-action button for the CV on the home page */
-.content a.cv-button {
+/* Call-to-action buttons on the home page (CV, "view all") */
+.content a.cv-button,
+.content a.view-more {
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
@@ -167,8 +168,78 @@ body {
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.content a.cv-button:hover {
+.content a.cv-button:hover,
+.content a.view-more:hover {
   background-color: rgba(var(--text-link-color-rgb), 0.25);
   box-shadow: 0 4px 12px rgba(var(--highlight-shadow-rgb), 0.6);
   border-bottom: 2px solid var(--highlight-border);
+}
+
+/* Video embeds on project pages: smaller, centred, framed like the cards
+   instead of a full-width block */
+.content iframe[src*="youtube.com/embed"],
+.content iframe[src*="linkedin.com/embed"] {
+  display: block;
+  width: min(100%, 560px);
+  margin: 0.5rem auto 1.5rem;
+  border: 1px solid var(--highlight-border);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Intro row on project pages: video on one side, "My Work" (or text) on the other;
+   stacks on narrow screens */
+.media-split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1rem 2rem;
+  margin: 1rem 0 1.5rem;
+
+  > iframe {
+    flex: 1 1 320px;
+    width: auto;
+    min-width: 0;
+    margin: 0;
+  }
+
+  > .media-text,
+  > fieldset {
+    flex: 1 1 280px;
+    min-width: 0;
+    margin: 0;
+
+    > :first-child { margin-top: 0; }
+    p:last-child { margin-bottom: 0; }
+  }
+}
+
+.view-more-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+/* Sidebar bottom: the theme only puts a dot divider after the mode toggle;
+   add the same dot between every contact button, centred in the gap */
+#sidebar .sidebar-bottom a:not(:last-child) {
+  position: relative;
+  overflow: visible;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: calc(100% + (0.8rem - 3px) / 2); /* $sb-btn-gap */
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: var(--sidebar-btn-color);
+    transform: translateY(-50%);
+    pointer-events: none;
+
+    @media (min-width: 1650px) {
+      left: calc(100% + (1rem - 3px) / 2); /* $sb-btn-gap-lg */
+    }
+  }
 }

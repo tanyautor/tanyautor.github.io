@@ -27,7 +27,7 @@ order: 2
 
             <div class="tags">
 
-              {% for tag in post.tags %}
+              {% for tag in post.tags limit: 3 %}
                 {% assign tag_slug = tag | slugify %}
 
                 <span class="tag desc-tag">{{ tag }}</span>
