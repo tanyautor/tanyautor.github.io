@@ -49,7 +49,7 @@
 <script>
   (function () {
     var mobile = window.matchMedia('(max-width: 849.98px)'); /* Chirpy's lg breakpoint */
-    var MIN_DIST = 60; // px of horizontal travel needed
+    var MIN_DIST = 50; // px of horizontal travel needed
     var start = null;
 
     function isOpen() {
@@ -65,23 +65,46 @@
       return false;
     }
 
+    var LOCK_DIST = 10; // px of movement before we decide: sideways swipe or normal scroll
+    var swipe = null; // { x, y, axis: null | 'x' | 'y' }
+
     document.addEventListener('touchstart', function (e) {
       if (!mobile.matches || e.touches.length !== 1 || inHorizontalScroller(e.target)) {
-        start = null;
+        swipe = null;
         return;
       }
-      start = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      swipe = { x: e.touches[0].clientX, y: e.touches[0].clientY, axis: null };
+    }, { passive: true });
+
+    // Real thumbs never swipe perfectly sideways, and the browser would start
+    // scrolling vertically. Decide the direction in the first few pixels; if it's
+    // sideways, stop the browser scrolling for the rest of this swipe.
+    // (Must be non-passive so preventDefault() is allowed.)
+    document.addEventListener('touchmove', function (e) {
+      if (!swipe) return;
+      var dx = e.touches[0].clientX - swipe.x;
+      var dy = e.touches[0].clientY - swipe.y;
+
+      if (!swipe.axis) {
+        if (Math.abs(dx) < LOCK_DIST && Math.abs(dy) < LOCK_DIST) return;
+        swipe.axis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+      }
+
+      if (swipe.axis === 'x' && e.cancelable) e.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener('touchcancel', function () {
+      swipe = null;
     }, { passive: true });
 
     document.addEventListener('touchend', function (e) {
-      if (!start) return;
-      var t = e.changedTouches[0];
-      var dx = t.clientX - start.x;
-      var dy = t.clientY - start.y;
-      start = null;
+      if (!swipe) return;
+      var s = swipe;
+      swipe = null;
+      if (s.axis !== 'x') return;
 
-      // mostly-horizontal swipes only, so normal scrolling is unaffected
-      if (Math.abs(dx) < MIN_DIST || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+      var dx = e.changedTouches[0].clientX - s.x;
+      if (Math.abs(dx) < MIN_DIST) return;
 
       if (dx > 0 && !isOpen()) {
         var trigger = document.getElementById('sidebar-trigger');
