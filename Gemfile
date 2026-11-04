@@ -2,7 +2,9 @@
 
 source "https://rubygems.org"
 
-gem "jekyll-theme-chirpy", "~> 7.4", ">= 7.4.1"
+# Pinned: Gemfile.lock is not committed, so without an exact version GitHub
+# Actions builds with the newest Chirpy and the live site drifts from local.
+gem "jekyll-theme-chirpy", "7.4.1"
 
 gem "html-proofer", "~> 5.0", group: :test
 
