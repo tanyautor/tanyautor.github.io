@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Real Time Fluid Rendering
+title: Real-Time Fluid Rendering
 date: 2025-10-31
 ---
 

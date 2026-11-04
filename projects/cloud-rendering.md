@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Real Time Cloud Rendering
-date: 2025-10-31
+title: Real-Time Cloud Rendering
+date: 2025-01-24
 ---
 
 <img src="/assets/img/projects/cloud_rendering/cloud_rendering_thumbnail.gif" alt="Real-time volumetric clouds"/>
@@ -20,7 +20,7 @@ In my second year studying at BUas, I worked for 8 weeks on a self-study project
 
 <summary markdown="span">Read More</summary>
 
-The main inspiration for this project, was Guerilla's Volumetric Clouds from Horizon: Zero Dawn and Horizon: Forbidden West and a very nifty article on the system the developed for these games: [Nubis³](https://www.guerrilla-games.com/read/nubis-cubed).
+The main inspiration for this project, was Guerrilla's Volumetric Clouds from Horizon: Zero Dawn and Horizon: Forbidden West and a very nifty article on the system the developed for these games: [Nubis³](https://www.guerrilla-games.com/read/nubis-cubed).
 
 I dove more into the implementation and design of this this Blog Post: [Attempting Volumetric Clouds from Scratch](/blogs/cloud-rendering).
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Copper Clash
-date: 2025-10-31
+date: 2024-06-30
 ---
 
 <div class="media-split" markdown="1">

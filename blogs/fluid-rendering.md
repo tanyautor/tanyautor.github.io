@@ -4,10 +4,10 @@ title: Graphics in Unreal Engine 5, what I wish I knew
 date: 2025-10-31
 ---
 
-![alt](assets/img/projects/fluid_rendering/fluid_rendering_thumbnail.gif)
+![Ray marched particle fluid rendered in Unreal Engine 5](assets/img/blogs/fluid_rendering/fluid_rendering_thumbnail.gif)
 
 For the past 7 weeks I have been working with a friend and fellow student
-Robin Heijmans on a school project. We set out to create a plugin for Unreal Engine 5, that features particle-based fluid simulation and real time ray marched rendering. If this sounds familiar, it’s because we got the idea from Sebastian Lague. He undoubtedly, developed a much more sophisticated approach in Unity. Please do check out his repository and videos on Fluid Simulation, they’re really great and he actually goes into the how and why of developing physics and rendering. However, my goal wasn’t focused on developing yet another ray marching algorithm, but more to simply implement one.
+Robin Heijmans on a school project. We set out to create a plugin for Unreal Engine 5, that features particle-based fluid simulation and real-time ray marched rendering. If this sounds familiar, it’s because we got the idea from Sebastian Lague. He undoubtedly, developed a much more sophisticated approach in Unity. Please do check out his repository and videos on Fluid Simulation, they’re really great and he actually goes into the how and why of developing physics and rendering. However, my goal wasn’t focused on developing yet another ray marching algorithm, but more to simply implement one.
 
 ## My challenge
 Having only ever worked on gameplay code in Unreal, I have never gotten a chance to actually work on anything graphics related, nor have I had the opportunity to write actual C++ in engine either, regardless I started making a loose plan.
@@ -24,7 +24,7 @@ With that in mind, I could safely assume that I needed to set up a couple of thi
 ### Shaders… which ones?
 Rasterization is mostly ever concerning itself with using vertex- and fragment shaders (or pixel shader in UE), there are a lot more stages to the pipeline itself, but for the most part those two shaders are what we as programmers interact with, when it comes to graphics.
 
-![alt](assets/img/blogs/fluid_rendering/rasterization.webp)
+![Diagram of the stages of the rasterization graphics pipeline](assets/img/blogs/fluid_rendering/rasterization.webp)
 *[https://learnopengl.com/Getting-started/Hello-Triangle](https://learnopengl.com/Getting-started/Hello-Triangle) (31.10.2025)*
 
 However, in my application I simply do not need to concern myself with vertices. All I need to do is cast rays from screen space into the world. To do so in a more minimalistic setting, I choose to use a compute shader instead, since this would also mean I could dispatch a single shader and wouldn’t have to go through any of the pipeline stages mentioned above.
@@ -366,5 +366,5 @@ Please do check them out they cover a lot more ground than I did here and go int
 Oh and my partner on this also wrote a blog about the physics side of our project please do check it out as well if you’re interested.
 [Real-Time Particle Based Fluid Simulation Plugin for Unreal Engine](https://medium.com/@robinheijmans/real-time-particle-based-fluid-simulation-plugin-for-unreal-engine-b38294f6a507)
 
-![alt](assets/img/Logo_BUas.png)
+![Breda University of Applied Sciences logo](assets/img/Logo_BUas.png)
 *this was a student project from BUas Games*

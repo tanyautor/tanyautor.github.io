@@ -29,7 +29,7 @@ github:
   username: tanyautor # change to your GitHub username
 
 LinkedIn:
-  username: tanya-helmers # change to your Twitter username
+  username: tanya-helmers # change to your LinkedIn username
 
 social:
   # Change to your full name.
@@ -136,9 +136,9 @@ assets:
     env: # [development | production]
 
 pwa:
-  enabled: true # The option for PWA feature (installable)
+  enabled: false # The option for PWA feature (installable)
   cache:
-    enabled: true # The option for PWA offline cache
+    enabled: false # The option for PWA offline cache
     # Paths defined here will be excluded from the PWA cache.
     # Usually its value is the `baseurl` of another website that
     # shares the same domain name as the current website.

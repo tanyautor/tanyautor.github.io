@@ -43,3 +43,53 @@
     });
   })();
 </script>
+
+<!-- Mobile: swipe right to open the sidebar, swipe left to close it.
+     Reuses the theme's own open/close (the hidden #sidebar-trigger and #mask). -->
+<script>
+  (function () {
+    var mobile = window.matchMedia('(max-width: 849.98px)'); /* Chirpy's lg breakpoint */
+    var MIN_DIST = 60; // px of horizontal travel needed
+    var start = null;
+
+    function isOpen() {
+      return document.body.hasAttribute('sidebar-display');
+    }
+
+    // Don't hijack swipes on things that scroll sideways (code blocks, tables, ...)
+    function inHorizontalScroller(el) {
+      for (; el && el !== document.body; el = el.parentElement) {
+        var ox = getComputedStyle(el).overflowX;
+        if ((ox === 'auto' || ox === 'scroll') && el.scrollWidth > el.clientWidth) return true;
+      }
+      return false;
+    }
+
+    document.addEventListener('touchstart', function (e) {
+      if (!mobile.matches || e.touches.length !== 1 || inHorizontalScroller(e.target)) {
+        start = null;
+        return;
+      }
+      start = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    }, { passive: true });
+
+    document.addEventListener('touchend', function (e) {
+      if (!start) return;
+      var t = e.changedTouches[0];
+      var dx = t.clientX - start.x;
+      var dy = t.clientY - start.y;
+      start = null;
+
+      // mostly-horizontal swipes only, so normal scrolling is unaffected
+      if (Math.abs(dx) < MIN_DIST || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+
+      if (dx > 0 && !isOpen()) {
+        var trigger = document.getElementById('sidebar-trigger');
+        if (trigger) trigger.click();
+      } else if (dx < 0 && isOpen()) {
+        var mask = document.getElementById('mask');
+        if (mask) mask.click();
+      }
+    }, { passive: true });
+  })();
+</script>

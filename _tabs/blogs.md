@@ -1,42 +1,25 @@
 ---
 title: Blog Posts
 layout: page
-icon: fas fa-archive
+icon: fas fa-pen-nib
 order: 2
 ---
 
 
 <section class="outlined-section">
-  These are mostly research topics I wrote blog posts about. Some of these were written for my time as a student at Breda University of applied sciences (BUas).
+  These are mostly research topics I wrote blog posts about. Some of these were written for my time as a student at Breda University of Applied Sciences (BUas).
 </section>
 
 <section class="outlined-section-wrapper">
   <section class="outlined-section">
 
   <h1 class="dynamic-title">
-    My Posts
+    My Blog Posts
   </h1>
 
     <div class="projects-container">
       {% for post in site.data.posts %}
-        <div class="card-wrapper">
-          <div class="project-card" data-tags="{{ post.tags | join: ',' }}">
-            <img src="{{ post.image }}" alt="{{ post.title }}">
-            <h3>{{ post.title }}</h3>
-            <a href="{{ post.link }}" class="card-link"></a>
-
-            <div class="tags">
-
-              {% for tag in post.tags limit: 3 %}
-                {% assign tag_slug = tag | slugify %}
-
-                <span class="tag desc-tag">{{ tag }}</span>
-                
-              {% endfor %}
-            </div>   
-          </div>
-        </div>
-
+        {% include post-card.html post=post %}
       {% endfor %}
     
     </div>

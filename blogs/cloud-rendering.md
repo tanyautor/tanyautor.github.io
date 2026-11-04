@@ -5,13 +5,13 @@ date: 2025-01-24
 ---
 
 
-Guerilla's Horizon series, is a great example for realistic Clouds in video games. They pretty much define the state of the art for realistic, real-time, Clouds. Their atmospheric lead, Andrew Schneider, held a presentation at [Siggraph](https://www.guerrilla-games.com/read/nubis-evolved) about how they rendered their clouds. Lo and behold, the way they render their clouds is through volumetric Ray Marching.
+Guerrilla's Horizon series, is a great example for realistic Clouds in video games. They pretty much define the state of the art for realistic, real-time, Clouds. Their atmospheric lead, Andrew Schneider, held a presentation at [Siggraph](https://www.guerrilla-games.com/read/nubis-evolved) about how they rendered their clouds. Lo and behold, the way they render their clouds is through volumetric Ray Marching.
 
 ## Ray Marching vs. Ray Tracing
 Ray Tracing has become a kind of a buzzword around video games, since NVidia has been pushing their RTX hardware. Even though they sound similar, the ideologies between these two techniques are different. The goal of Ray Tracing is to find surface intersections, which is precisely why we hear about it so much in discussion about general rendering. The discussion is then Rasterization vs. Ray Tracing, since Ray Tracing is mostly about the surface you hit. And projecting that hit on the pixel you’re processing. Essentially emulating rays of light.
 The goal of Ray Marching is usually to sample a lot of points in a scene. Instead of Tracing a Line (Ray) to a surface hit, you’d step from a starting point in a direction, marching a Line (Ray), as you go. The reason for taking multiple steps, is that it allows you to sample at each and everyone, checking for intersections, distances, etc.
 
-![alt](assets/img/blogs/cloud_rendering/raymarching_graphic.webp)
+![Diagram of a ray marching through a volume in fixed steps](assets/img/blogs/cloud_rendering/raymarching_graphic.webp)
 *[https://barradeau.com/blog/?p=575](https://barradeau.com/blog/?p=575) (23.1.2025)*
 
 ## Approach
@@ -160,7 +160,7 @@ vec4 SampleStepping(inout Ray _ray)
 
 The output is looking a little strange, but this isn’t unexpected. Since we don’t have a noise composite yet and neither do we sample light.
 
-![alt](assets/img/blogs/cloud_rendering/first_sample.webp)
+![First ray marched sample of the cloud volume, without noise or lighting](assets/img/blogs/cloud_rendering/first_sample.webp)
 
 Now to shape this into volume into a cloud, a common approach is using noise. The code above is already working with a noise composite, it just needs to be supplied with some useful data.
 
@@ -179,7 +179,7 @@ vec2 cloud_profile = texture(cloud_data, ray_pos);
 float noise_composite = texture(noise_data, ray_pos);
 ```
 
-![alt](assets/img/blogs/cloud_rendering/perlin_sample.webp)
+![Cloud volume shaped by a Perlin-like noise texture](assets/img/blogs/cloud_rendering/perlin_sample.webp)
 *This looks very Perlin like. You can try generating a composite out of multiple types of noise.*
 
 The output looks a lot more cloud shaped, but very bright all over. This means, the one last thing to take into account is lighting. An easy implementation for this I’ve gotten from [Maxime Heckel’s](https://blog.maximeheckel.com/posts/real-time-cloudscapes-with-volumetric-raymarching/) blog about volumetric clouds. It’s using the directional derivative method, from [Inigo Quilez](https://iquilezles.org/). Which means we need to sample density once more in the direction of our light source, to calculate a “diffuse” value. This is solution is far from perfect since it is meant to be meant to approximate surface normals on SDFs. But Maxime’s version works on density, so it is quite easy to implement in our existing function. The results, will probably struggle with any concave shape, but they should look believable enough for now.
@@ -234,15 +234,15 @@ vec4 SampleStepping(inout Ray _ray)
 ```
 
 
-![alt](assets/img/blogs/cloud_rendering/sdf_lighting.webp)
+![Cloud lit with a purple light colour](assets/img/blogs/cloud_rendering/sdf_lighting.webp)
 *The purple color is adjustable of course, look for a light_color variable ;)*
 
 ## Adjusting the Cloud Shape
-The general shape seems very scattered, more like Smoke and less like an actual cloud laying on the Troposphere. Basing the dimensional profile around the center alone makes the result also seem a bit rigid. An interesting concept I found in [Guerillas Siggraph Presentation](https://www.guerrilla-games.com/read/nubis-evolved), was their Vertical Profile.
+The general shape seems very scattered, more like Smoke and less like an actual cloud laying on the Troposphere. Basing the dimensional profile around the center alone makes the result also seem a bit rigid. An interesting concept I found in [Guerrilla's Siggraph Presentation](https://www.guerrilla-games.com/read/nubis-evolved), was their Vertical Profile.
 
 They used two look up Textures to generate essentially a vertical overlay to shape the Cloud. They sample these Textures through a Cloud Type on the x-axis, and a gradient on the y-axis, specifically the bottom and top gradients, we used to calculate the Dimensional Profile.
 
-![alt](assets/img/blogs/cloud_rendering/dimensional_profile.webp)
+![Vertical profile look-up textures used to shape the cloud](assets/img/blogs/cloud_rendering/dimensional_profile.webp)
 
 Thinking back on how we generated the Dimensional Profile and Coverage, we simply set the Coverage to 1.0. If we set the Coverage value to the Vertical Profile, it should make our cloud look more like it’s laying on the Troposphere, since we’re overlaying it onto every slice of the Grid vertically and cutting the bottom of the cloud with a “sharp” Texture.
 
@@ -292,11 +292,11 @@ for (int z = 0; z < grid_size.z; z++)
 
 And now our code should generate something like this:
 
-![alt](assets/img/blogs/cloud_rendering/final_shape.webp)
+![Cloud shape after applying the vertical profile](assets/img/blogs/cloud_rendering/final_shape.webp)
 
 This cloud looks a little different in shape, but it’s still quite untamed. Note that we replaced our previous constant value, Coverage, with the Cloud Type used for the look up Textures. So, if this value samples our look up Textures, then changing it should shape the cloud we sample at run time too.
 
-![alt](assets/img/blogs/cloud_rendering/shape_adjusted.webp)
+![Cloud shape with the vertical profile sampled at a different cloud type](assets/img/blogs/cloud_rendering/shape_adjusted.webp)
 
 Evidently, calculating the Vertical Profile at different position along the x-axis, changes our Cloud shape drastically. You can think of the Vertical Profile as essentially cutting the Cloud off, at different heights in the Troposphere.
 
@@ -335,7 +335,7 @@ static vec3 location += wind_direction * delta_time;
 glUniform3f(2, location.x, location.y, location.z);
 ```
 
-![alt](assets/img/blogs/cloud_rendering/cloud_rendering_thumbnail.gif)
+![Animated volumetric cloud drifting with the wind](assets/img/blogs/cloud_rendering/cloud_rendering_thumbnail.gif)
 
 Adding the movement wasn’t too big of a challenge, but it does make the Cloud look a lot more lively.
 
@@ -348,5 +348,5 @@ The lighting model implemented here, was meant for approximating surface normals
 
 In addition the Clouds shape is still quite rigid and limited to the Dimensional Profile. A massive improvement would likely be a tool to edit the Clouds Density and Coverage within the Volume independently, or generate them based on 3D Meshes.
 
-![alt](assets/img/Logo_BUas.png)
+![Breda University of Applied Sciences logo](assets/img/Logo_BUas.png)
 *this was a student project from BUas Games*

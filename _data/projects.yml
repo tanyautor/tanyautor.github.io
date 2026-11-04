@@ -42,7 +42,7 @@
   highlighted_layout: image-left
   short_description: "Student group project at BUas, focused on collaboration and research."
 
-- title: "Real Time Fluid Rendering"
+- title: "Real-Time Fluid Rendering"
   image: "assets/img/projects/fluid_rendering/fluid_rendering_thumbnail.gif"
   link: "/projects/fluid-simulation"
   tags: [Graphics, C++, Unreal]
@@ -52,7 +52,7 @@
   highlighted_layout: image-left
   short_description: "Research project into Real-Time Fluid rendering and particle based fluid simulation."
 
-- title: "Real Time Cloud Rendering"
+- title: "Real-Time Cloud Rendering"
   image: "assets/img/projects/cloud_rendering/cloud_rendering_thumbnail.gif"
   link: "/projects/cloud-rendering"
   tags: [Graphics, Custom Tech]
@@ -60,4 +60,4 @@
   people: 1
   highlighted: false
   highlighted_layout: image-left
-  short_description: "Research project into Real-Time Cloud rendering based on Guerilla Games Nubis system."
+  short_description: "Research project into Real-Time Cloud rendering based on Guerrilla Games' Nubis system."
