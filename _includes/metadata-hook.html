@@ -6,3 +6,40 @@
 <link rel="stylesheet" href="{{ '/assets/css/tag-colors.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/fieldset.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/dropdown.css' | relative_url }}">
+
+<!-- Light/dark mode: follow the system setting on load, then the sidebar button
+     is a plain light <-> dark toggle (Chirpy's own toggle cycles through a third
+     "follow system" state, which our CSS renders as dark). -->
+<script>
+  (function () {
+    var root = document.documentElement;
+    var query = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function systemMode() {
+      return query.matches ? 'dark' : 'light';
+    }
+
+    function apply(mode, remember) {
+      root.setAttribute('data-mode', mode);
+      try {
+        if (remember) sessionStorage.setItem('mode', mode);
+      } catch (e) {}
+      window.postMessage({ id: 'theme-mode' }, '*');
+    }
+
+    // On load: keep a choice made earlier this session, otherwise use the system setting
+    if (!root.hasAttribute('data-mode')) root.setAttribute('data-mode', systemMode());
+
+    // Button: toggle between light and dark only
+    if (window.Theme) {
+      Theme.flip = function () {
+        apply(root.getAttribute('data-mode') === 'dark' ? 'light' : 'dark', true);
+      };
+    }
+
+    // If the OS setting changes mid-visit, Chirpy clears the mode; re-apply the new system one
+    query.addEventListener('change', function () {
+      apply(systemMode(), false);
+    });
+  })();
+</script>

@@ -220,26 +220,10 @@ body {
   margin-top: 0.5rem;
 }
 
-/* Sidebar bottom: the theme only puts a dot divider after the mode toggle;
-   add the same dot between every contact button, centred in the gap */
-#sidebar .sidebar-bottom a:not(:last-child) {
-  position: relative;
-  overflow: visible;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: calc(100% + (0.8rem - 3px) / 2); /* $sb-btn-gap */
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background-color: var(--sidebar-btn-color);
-    transform: translateY(-50%);
-    pointer-events: none;
-
-    @media (min-width: 1650px) {
-      left: calc(100% + (1rem - 3px) / 2); /* $sb-btn-gap-lg */
-    }
-  }
+/* Mobile: the sidebar is a fixed-height flex column, so on short screens
+   the theme lets the profile header shrink and its text spills over the
+   nav links. Keep every section at its natural height and let the sidebar
+   scroll instead. */
+#sidebar > * {
+  flex-shrink: 0;
 }
