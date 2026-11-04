@@ -1,0 +1,19 @@
+{% comment %} Project card, shared by the home page and the Projects page.
+   Usage: {% include project-card.html project=project %}  (an entry from _data/projects.yml)
+   The title is the card's only link; CSS stretches it over the whole card
+   (.card-title-link::after), so the release badge can stay a separate link. {% endcomment %}
+{% assign project = include.project %}
+<div class="card-wrapper">
+  <div class="project-card">
+    {% include media.html src=project.image card=true %}
+    {% include team-badge.html people=project.people %}
+    {% include release-badge.html release=project.release %}
+    <h3><a class="card-title-link" href="{{ project.link | relative_url }}">{{ project.title }}</a></h3>
+
+    <div class="tags">
+      {% for desc in project.desc limit: 3 %}
+        <span class="tag desc-tag">{{ desc }}</span>
+      {% endfor %}
+    </div>
+  </div>
+</div>

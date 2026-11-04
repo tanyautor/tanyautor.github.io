@@ -2,7 +2,11 @@
    Usage: {% include media.html src="assets/img/.../name.mp4" alt="..." %}
    For a .mp4 it also uses name.webm (smaller, preferred) and name_poster.webp
    (first frame, shown instantly while the video loads), next to the .mp4.
-   Anything else is rendered as a normal <img>. {% endcomment %}
+   Anything else is rendered as a normal <img>.
+   card=true: for card thumbnails. The media is decorative (the card's title link
+   names it), and the <img> is written with a line break after "<img" so the
+   theme's refactor-content (which looks for "<img ") doesn't wrap it in a
+   lightbox link, which would be a second, hidden link inside the card. {% endcomment %}
 {% assign src = include.src %}
 {% assign first_char = src | slice: 0 %}
 {% unless first_char == '/' or src contains '://' %}{% assign src = src | prepend: '/' %}{% endunless %}
@@ -12,10 +16,11 @@
   {% assign base = src | split: '.mp4' | first %}
   <video class="gif-video" autoplay loop muted playsinline disablepictureinpicture
          poster="{{ base | append: '_poster.webp' | relative_url }}"
-         aria-label="{{ include.alt }}">
+         {% if include.card %}aria-hidden="true"{% else %}aria-label="{{ include.alt }}"{% endif %}>
     <source src="{{ base | append: '.webm' | relative_url }}" type="video/webm">
     <source src="{{ src | relative_url }}" type="video/mp4">
   </video>
 {% else %}
-  <img src="{{ src | relative_url }}" alt="{{ include.alt }}">
+  {% if include.card %}<img
+    src="{{ src | relative_url }}" alt="" loading="lazy">{% else %}<img src="{{ src | relative_url }}" alt="{{ include.alt }}">{% endif %}
 {% endif %}

@@ -34,6 +34,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
   position: relative;
+  isolation: isolate; /* own stacking context, so the blurred background below can sit at z-index -1 */
   color: var(--text-color);
   background: transparent;
 
@@ -45,7 +46,7 @@
     right: 0px;
     bottom: 0px;
     border-radius: inherit;
-    z-index: 0;
+    z-index: -1; /* behind all card content, including the non-positioned title */
     background: var(--card-bg);
     filter: blur(6px);
     opacity: 0.8;
@@ -94,14 +95,34 @@
   color: inherit;
 }
 
-/* Invisible link overlay that covers the whole card */
-.card-link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
+/* The card's title is its one real link ("stretched link"): its ::after covers
+   the whole card, so clicking anywhere opens the project, while screen readers
+   and keyboards get a single link named after the project. The title must not be
+   positioned itself, so the ::after is sized to the card, not the heading. */
+.project-card > h3 {
+  position: static;
+}
+
+.project-card a.card-title-link {
+  color: inherit;
+  text-decoration: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    border-radius: inherit;
+  }
+
+  &:focus-visible {
+    outline: none; /* the ring is drawn around the whole card instead */
+  }
+}
+
+.project-card:has(.card-title-link:focus-visible) {
+  outline: 3px solid var(--text-link-color);
+  outline-offset: 3px;
 }
 
 .container {
@@ -143,7 +164,7 @@
   i { margin-right: 0.2rem; }
 }
 
-/* "Released on" link, bottom-left of the card image; sits above .card-link so it's clickable */
+/* "Released on" link, bottom-left of the card image; sits above the stretched title link so it's clickable on its own */
 .project-card > .release-badge {
   position: absolute;
   top: 168px; /* image is 200px tall incl. 10px padding */

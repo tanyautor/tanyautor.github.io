@@ -1,6 +1,7 @@
 {% comment %} Blog post card, shared by the home page and the Blog Posts page.
    Usage: {% include post-card.html post=post %}  (post = an entry from _data/posts.yml)
-   Date and reading time are read from the post's own page. {% endcomment %}
+   Date and reading time are read from the post's own page. The title is the
+   card's only link, stretched over the whole card by CSS. {% endcomment %}
 {% assign post = include.post %}
 {% assign post_page = nil %}
 {% for p in site.pages %}
@@ -10,9 +11,9 @@
 
 <div class="card-wrapper">
   <div class="project-card">
-    {% include media.html src=post.image alt=post.title %}
+    {% include media.html src=post.image card=true %}
     <span class="post-badge"><i class="fas fa-pen-nib"></i> Blog post</span>
-    <h3>{{ post.title }}</h3>
+    <h3><a class="card-title-link" href="{{ post.link | relative_url }}">{{ post.title }}</a></h3>
 
     {% if post_page %}
       {% assign words = post_page.content | strip_html | number_of_words %}
@@ -28,6 +29,5 @@
       <p class="post-summary">{{ post.short_description }}</p>
     {% endif %}
 
-    <a href="{{ post.link }}" class="card-link"></a>
   </div>
 </div>

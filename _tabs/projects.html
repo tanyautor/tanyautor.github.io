@@ -1,0 +1,22 @@
+---
+layout: page
+icon: fas fa-stream
+order: 1
+---
+
+
+<section class="outlined-section-wrapper">
+  <section class="outlined-section">
+
+  <h1 class="dynamic-title">
+    My Projects
+  </h1>
+
+  <div class="projects-container">
+    {% for project in site.data.projects %}
+      {% include project-card.html project=project %}
+    {% endfor %}
+
+  </div>
+  </section>
+</section>
