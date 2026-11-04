@@ -10,7 +10,7 @@
   short_description: "Theatre-themed first-person action adventure with a time-stasis mechanic, released on Steam."
 
 - title: "Kudzu Puzzle Demo"
-  image: "assets/img/projects/kudzu_demo/kudzu_demo_thumbnail.png"
+  image: "assets/img/projects/kudzu_demo/kudzu_demo_thumbnail.webp"
   link: "/projects/kudzu-demo"
   tags: [Gameplay, C++, Custom Tech]
   desc: [Gameplay Programming, Custom Engine, Input & Physics Tools]
@@ -43,7 +43,7 @@
   short_description: "Student group project at BUas, focused on collaboration and research."
 
 - title: "Real-Time Fluid Rendering"
-  image: "assets/img/projects/fluid_rendering/fluid_rendering_thumbnail.gif"
+  image: "assets/img/projects/fluid_rendering/fluid_rendering.mp4"
   link: "/projects/fluid-simulation"
   tags: [Graphics, C++, Unreal]
   desc: [Compute Shaders, Low-Level GPU Optimization, Research Project]
@@ -53,7 +53,7 @@
   short_description: "Research project into Real-Time Fluid rendering and particle based fluid simulation."
 
 - title: "Real-Time Cloud Rendering"
-  image: "assets/img/projects/cloud_rendering/cloud_rendering_thumbnail.gif"
+  image: "assets/img/projects/cloud_rendering/cloud_rendering.mp4"
   link: "/projects/cloud-rendering"
   tags: [Graphics, Custom Tech]
   desc: [Volumetric Rendering, Low-Level GPU Optimization, Self-Study Project]
@@ -61,3 +61,14 @@
   highlighted: false
   highlighted_layout: image-left
   short_description: "Research project into Real-Time Cloud rendering based on Guerrilla Games' Nubis system."
+
+- title: "Roll To Die"
+  image: "assets/img/projects/roll_to_die/roll_to_die_thumbnail.webp"
+  link: "/projects/roll-to-die"
+  tags: [Gameplay, C#, Unity]
+  desc: [Roguelike Map Scroller, Shop & Node Events, GMTK Game Jam 2022]
+  release: { platform: itch.io, url: "https://emzph.itch.io/role-to-die" }
+  people: 5
+  highlighted: false
+  highlighted_layout: image-left
+  short_description: "Dice roguelike made in 48 hours in Unity for the GMTK Game Jam 2022, as the team's only programmer."

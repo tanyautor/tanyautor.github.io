@@ -1,9 +1,22 @@
-- title: "Breda University of Applied Sciences - Game Technologies Bachelor's Degree"
-  period: "2023 - Present"
-  image: "/assets/img/Logo_BUas.png"
-  link: "https://www.buas.nl/opleidingen/bachelor-creative-media-and-game-technologies"
+# Education timeline on the About page (newest first).
+# highlights: 2-3 short lines on what you did / learned there (optional)
+# skills:     a few pills (optional)
 
-- title: "Gymnasium Ritterhude - Abitur"
-  period: "2020 - 2023"
-  image: "/assets/img/gyrhlogo.png"
+- degree: "BSc Creative Media & Game Technologies (Programming)"
+  school: "Breda University of Applied Sciences"
+  location: "Breda, Netherlands"
+  period: "2023 – 2027 (expected)" # TODO: confirm expected graduation year
+  image: "/assets/img/logo_buas.webp"
+  link: "https://www.buas.nl/opleidingen/bachelor-creative-media-and-game-technologies"
+  highlights:
+    - "Lead programmer and build owner on *Curtain Call*, released on Steam"
+    - "Gameplay and tools programming in a custom C++ engine (*Kudzu Puzzle Demo*)"
+    - "Graphics research: volumetric clouds (OpenGL) and a ray marched fluid renderer (Unreal Engine 5)"
+  skills: [C++, Unreal Engine 5, Custom Engines, Graphics, CI/CD]
+
+- degree: "Abitur"
+  school: "Gymnasium Ritterhude"
+  location: "Ritterhude, Germany"
+  period: "2020 – 2023"
+  image: "/assets/img/logo_gyrh.webp"
   link: "https://www.gymnasium-ritterhude.net/"

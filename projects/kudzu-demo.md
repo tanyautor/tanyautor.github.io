@@ -42,7 +42,7 @@ The demo is free to play on [itch.io](https://tanyautor.itch.io/kudzu-puzzle-dem
 
 <legend style="font-size: 1.5em;">Character Controller</legend>
 
-<img src="/assets/img/projects/kudzu_demo/char_ctrl_stairs.gif" alt="Character controller walking up stairs"/>
+{% include media.html src="/assets/img/projects/kudzu_demo/char_ctrl_stairs.mp4" alt="Character controller walking up stairs" %}
 
 *Placeholder.* A 3D character controller with movement states, friction, falling, ladders and smooth stair stepping.
 
@@ -70,7 +70,7 @@ The demo is free to play on [itch.io](https://tanyautor.itch.io/kudzu-puzzle-dem
 
 <summary markdown="span">Read More</summary>
 
-<img src="/assets/img/projects/kudzu_demo/collision_layer_showcase.gif" alt="Collision layers in action"/>
+{% include media.html src="/assets/img/projects/kudzu_demo/collision_layer_showcase.mp4" alt="Collision layers in action" %}
 
 *Placeholder.* How the layers are stored, and how designers use them in the demo, for example for the moving platforms and the bridge.
 

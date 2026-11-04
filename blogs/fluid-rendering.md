@@ -4,7 +4,7 @@ title: Graphics in Unreal Engine 5, what I wish I knew
 date: 2025-10-31
 ---
 
-![Ray marched particle fluid rendered in Unreal Engine 5](assets/img/blogs/fluid_rendering/fluid_rendering_thumbnail.gif)
+{% include media.html src="/assets/img/projects/fluid_rendering/fluid_rendering.mp4" alt="Ray marched particle fluid rendered in Unreal Engine 5" %}
 
 For the past 7 weeks I have been working with a friend and fellow student
 Robin Heijmans on a school project. We set out to create a plugin for Unreal Engine 5, that features particle-based fluid simulation and real-time ray marched rendering. If this sounds familiar, it’s because we got the idea from Sebastian Lague. He undoubtedly, developed a much more sophisticated approach in Unity. Please do check out his repository and videos on Fluid Simulation, they’re really great and he actually goes into the how and why of developing physics and rendering. However, my goal wasn’t focused on developing yet another ray marching algorithm, but more to simply implement one.

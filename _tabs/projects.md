@@ -16,7 +16,7 @@ order: 1
     {% for project in site.data.projects %}
       <div class="card-wrapper">
         <div class="project-card" data-tags="{{ project.tags | join: ',' }}">
-          <img src="{{ project.image }}" alt="{{ project.title }}">
+          {% include media.html src=project.image alt=project.title %}
           {% include team-badge.html people=project.people %}
             {% include release-badge.html release=project.release %}
           <h3 style="display:inline-block;white-space:break-spaces;">{{ project.title }}</h3>

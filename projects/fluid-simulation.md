@@ -4,7 +4,7 @@ title: Real-Time Fluid Rendering
 date: 2025-10-31
 ---
 
-<img src="/assets/img/projects/fluid_rendering/fluid_rendering_thumbnail.gif" alt="Ray marched particle fluid"/>
+{% include media.html src="/assets/img/projects/fluid_rendering/fluid_rendering.mp4" alt="Ray marched particle fluid" %}
 
 Worked with Robin Heijmans on Real-Time Particle Based Fluid Simulation in Unreal Engine 5. He worked on the particle fluid simulation, I developed the ray marched renderer. The result is packaged as a drop-in Unreal plugin.
 

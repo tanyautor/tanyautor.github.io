@@ -335,7 +335,7 @@ static vec3 location += wind_direction * delta_time;
 glUniform3f(2, location.x, location.y, location.z);
 ```
 
-![Animated volumetric cloud drifting with the wind](assets/img/blogs/cloud_rendering/cloud_rendering_thumbnail.gif)
+{% include media.html src="/assets/img/projects/cloud_rendering/cloud_rendering.mp4" alt="Animated volumetric cloud drifting with the wind" %}
 
 Adding the movement wasn’t too big of a challenge, but it does make the Cloud look a lot more lively.
 

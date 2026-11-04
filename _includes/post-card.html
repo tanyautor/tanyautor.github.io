@@ -10,7 +10,7 @@
 
 <div class="card-wrapper">
   <div class="project-card">
-    <img src="{{ post.image }}" alt="{{ post.title }}">
+    {% include media.html src=post.image alt=post.title %}
     <span class="post-badge"><i class="fas fa-pen-nib"></i> Blog post</span>
     <h3>{{ post.title }}</h3>
 

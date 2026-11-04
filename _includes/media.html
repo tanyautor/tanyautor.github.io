@@ -1,0 +1,21 @@
+{% comment %} An image, or a silent looping video that behaves like a GIF.
+   Usage: {% include media.html src="assets/img/.../name.mp4" alt="..." %}
+   For a .mp4 it also uses name.webm (smaller, preferred) and name_poster.webp
+   (first frame, shown instantly while the video loads), next to the .mp4.
+   Anything else is rendered as a normal <img>. {% endcomment %}
+{% assign src = include.src %}
+{% assign first_char = src | slice: 0 %}
+{% unless first_char == '/' or src contains '://' %}{% assign src = src | prepend: '/' %}{% endunless %}
+
+{% assign ext = src | split: '.' | last | downcase %}
+{% if ext == 'mp4' %}
+  {% assign base = src | split: '.mp4' | first %}
+  <video class="gif-video" autoplay loop muted playsinline disablepictureinpicture
+         poster="{{ base | append: '_poster.webp' | relative_url }}"
+         aria-label="{{ include.alt }}">
+    <source src="{{ base | append: '.webm' | relative_url }}" type="video/webm">
+    <source src="{{ src | relative_url }}" type="video/mp4">
+  </video>
+{% else %}
+  <img src="{{ src | relative_url }}" alt="{{ include.alt }}">
+{% endif %}

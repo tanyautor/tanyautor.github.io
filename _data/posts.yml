@@ -1,5 +1,5 @@
 - title: "Attempting Volumetric Clouds from Scratch"
-  image: "assets/img/blogs/cloud_rendering/cloud_rendering_thumbnail.gif"
+  image: "assets/img/projects/cloud_rendering/cloud_rendering.mp4"
   link: "/blogs/cloud-rendering"
   tags: [Graphics, C++, OpenGL, Custom Tech]
   highlighted: true
@@ -7,7 +7,7 @@
   short_description: "Research project into Real-Time Cloud rendering using ray marching, and voxel optimizations."
 
 - title: "Graphics in Unreal Engine 5, what I wish I knew"
-  image: "assets/img/blogs/fluid_rendering/fluid_rendering_thumbnail.gif"
+  image: "assets/img/projects/fluid_rendering/fluid_rendering.mp4"
   link: "/blogs/fluid-rendering"
   tags: [Graphics, C++, Unreal]
   highlighted: false

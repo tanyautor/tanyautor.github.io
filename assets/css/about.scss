@@ -1,0 +1,134 @@
+---
+---
+
+/* About page: intro + skills, then the education timeline */
+
+.about-intro {
+  text-align: left !important; /* .outlined-section centres text by default */
+  padding: 1.5rem 2rem;
+
+  p { max-width: 70ch; }
+
+  .about-status {
+    font-weight: bold;
+    color: var(--text-link-color);
+  }
+}
+
+.skill-list {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.6rem 1.25rem;
+  align-items: center;
+  margin: 1.25rem 0;
+
+  dt { font-weight: bold; }
+
+  dd {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0;
+  }
+
+  /* phones: label above its pills */
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+
+    dd { margin-bottom: 0.6rem; }
+  }
+}
+
+/* shared pill look (same as the card highlight pills) */
+.skill-list .tag,
+.timeline-skills .tag {
+  margin: 0;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.85rem;
+  font-weight: normal;
+  line-height: 1.4; /* the theme's .tag uses 3rem, which made these very tall */
+  background-color: rgba(var(--text-link-color-rgb), 0.12);
+  color: var(--text-color);
+  border: 1px solid var(--highlight-border) !important;
+}
+
+/* Timeline: a vertical line with one entry per school, newest first */
+.timeline {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0 0 0 1.5rem;
+  border-left: 2px solid var(--highlight-border);
+  text-align: left;
+}
+
+.timeline-entry {
+  position: relative;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding-bottom: 2rem;
+
+  &:last-child { padding-bottom: 0.5rem; }
+
+  /* dot on the line */
+  &::before {
+    content: '';
+    position: absolute;
+    left: calc(-1.5rem - 7px);
+    top: 0.6rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--text-link-color);
+    box-shadow: 0 0 0 3px var(--bg-color);
+  }
+}
+
+.content a.timeline-logo {
+  flex: 0 0 auto;
+  border-bottom: none !important;
+
+  /* every logo is a square emblem on white (logo_*.webp), shown at one size */
+  img {
+    display: block;
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+    margin: 0;
+    box-shadow: 0 0 0 1px var(--highlight-border);
+  }
+}
+
+.timeline-body {
+  flex: 1 1 auto;
+  min-width: 0;
+
+  h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1.15rem;
+  }
+
+  .timeline-meta {
+    margin: 0 0 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  ul {
+    margin: 0 0 0.6rem;
+    padding-left: 1.1rem;
+  }
+}
+
+.timeline-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* phones: logo above the text */
+@media (max-width: 576px) {
+  .timeline-entry { flex-direction: column; gap: 0.6rem; }
+  .content a.timeline-logo img { width: 52px; height: 52px; }
+}

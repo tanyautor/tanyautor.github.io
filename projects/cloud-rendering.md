@@ -4,7 +4,7 @@ title: Real-Time Cloud Rendering
 date: 2025-01-24
 ---
 
-<img src="/assets/img/projects/cloud_rendering/cloud_rendering_thumbnail.gif" alt="Real-time volumetric clouds"/>
+{% include media.html src="/assets/img/projects/cloud_rendering/cloud_rendering.mp4" alt="Real-time volumetric clouds" %}
 
 In my second year studying at BUas, I worked for 8 weeks on a self-study project. The assignment we were given gave us complete freedom in our choice of topic, and only limited us in time and complexity. After deliberating for a while on what topic to explore, I chose to try myself at graphics programming with Volumetric Cloud Rendering. 
 
